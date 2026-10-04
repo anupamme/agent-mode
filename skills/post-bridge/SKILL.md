@@ -382,6 +382,7 @@ Platform-specific fields:
 | **Facebook** (`facebook`) | `placement` | `"story"` | Publish as a Page Story (one image/video, no caption/carousel). Omit → feed post. |
 | | `first_comment` | string (≤2200) | Comment posted right after the post publishes — good spot for a link/CTA. Ignored for stories. A failed comment won't fail the post. |
 | **LinkedIn** (`linkedin`) | `document_title` | string | Title for a PDF (document/carousel) post. Only applies when media is a PDF. Defaults to file name. |
+| | `first_comment` | string (≤1250) | Comment posted on the post right after it publishes, from the same profile or page. Good spot for a link. A failed comment won't fail the post. |
 | **Bluesky** (`bluesky`) | — | — | Only `caption` / `media` overrides. |
 | **Threads** (`threads`) | `location` | `"timeline"` \| `"reels"` | Where it appears. `timeline` (default) or `reels` (video only). |
 | | `first_comment` | string (≤500) | Reply posted right after the thread publishes — good spot for a link. A failed reply won't fail the post. |

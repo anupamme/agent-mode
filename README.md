@@ -1,7 +1,7 @@
 # Post Bridge Agent Mode
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.4-green.svg)]()
+[![Version](https://img.shields.io/badge/version-1.1.5-green.svg)]()
 [![npm](https://img.shields.io/badge/npm-postbridge-cli-CB3837)](https://www.npmjs.com/package/postbridge-cli)
 [![Post Bridge API](https://img.shields.io/badge/Post_Bridge-API-3B9AF8)](https://api.post-bridge.com/reference)
 

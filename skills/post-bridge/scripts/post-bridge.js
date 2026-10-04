@@ -18,7 +18,7 @@ const VERSION = (() => {
   try {
     return require("../../../package.json").version;
   } catch {
-    return "1.1.4";
+    return "1.1.5";
   }
 })();
 const CONFIG_DIR = path.join(os.homedir(), ".config", "post-bridge");
@@ -413,7 +413,7 @@ const COMMANDS = {
         twitter: "first_comment (put links here, they are stripped from the tweet)",
         youtube: "title, tags[] (per video, 500 chars total), contains_synthetic_media, thumbnail (media id, long-form only)",
         facebook: "placement:\"story\", first_comment",
-        linkedin: "document_title (PDF posts)",
+        linkedin: "document_title (PDF posts), first_comment",
         pinterest: "title, link, board_ids[], video_cover_timestamp_ms",
         example: "--platform-config '{\"youtube\":{\"title\":\"My video\",\"tags\":[\"cooking\",\"easy recipes\"]},\"tiktok\":{\"draft\":true}}'",
       },
