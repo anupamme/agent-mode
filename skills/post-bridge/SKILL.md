@@ -359,6 +359,7 @@ Platform-specific fields:
 | | `video_cover_timestamp_ms` | number (ms) | Cover frame for a reel/video. Ignored if `cover_image` is set. |
 | | `cover_image` | string (media ID) | Uploaded image used as the reel cover. Upload first, pass its ID. |
 | | `is_trial_reel` | boolean | Trial reel (non-followers first). Needs Pro/Creator account, 1,000+ followers, public profile. Max 5/day. Not with `placement:"story"`. |
+| | `share_to_feed` | boolean | Reels only. `false` keeps the reel off the profile grid (Reels tab only). Omit for the default (grid + Reels tab). |
 | | `trial_graduation` | `"MANUAL"` \| `"SS_PERFORMANCE"` | Trial reel graduation. `MANUAL` (default) = you decide; `SS_PERFORMANCE` = auto-graduate on performance in 72h. |
 | | `user_tags` | array of usernames | People-tag accounts (they get notified). `@` optional. Feed/carousel/reels only; ignored for stories. Max 20. |
 | | `collaborators` | array of usernames | Invite co-authors: the post also appears on their profile and shares its likes/comments. `@` optional. **Max 3, public accounts only** — a private or wrong handle fails the post. Feed/carousel/reels only; ignored for stories. Publishes immediately; shows on their profile once they accept. |
