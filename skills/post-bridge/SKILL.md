@@ -376,17 +376,20 @@ Platform-specific fields:
 | | `disclose_branded_content` | boolean | Disclose as paid partnership / branded content. Defaults to false. |
 | | `disclose_your_brand` | boolean | Disclose as promoting your own brand. Defaults to false. |
 | **Twitter/X** (`twitter`) | `first_comment` | string (≤280, 2200 premium) | Reply posted right after the tweet. **Put links here** — the main tweet strips URLs to dodge X's surcharge. A failed reply won't fail the post. |
+| | `thread` | string[] (≤25) | Multi-tweet thread: each entry is posted as a reply to the previous one, in order, under the main tweet. Links allowed. Stops at the first failed entry; the main tweet still publishes. |
 | **YouTube** (`youtube`) | `title` | string (≤100 chars) | Video title override. |
 | | `tags` | string[] | Video tags, set per video (YouTube `snippet.tags`). Whole set capped at 500 chars; extras are dropped, the post still publishes. |
 | | `contains_synthetic_media` | boolean | Disclose realistic altered/AI content ("Altered or synthetic content" label). |
 | | `thumbnail` | string (media ID) | Custom thumbnail. **Long-form videos only** — ignored on Shorts. Channel must be verified; JPEG/PNG, 1280×720, <2MB. |
 | **Facebook** (`facebook`) | `placement` | `"story"` | Publish as a Page Story (one image/video, no caption/carousel). Omit → feed post. |
 | | `first_comment` | string (≤2200) | Comment posted right after the post publishes — good spot for a link/CTA. Ignored for stories. A failed comment won't fail the post. |
+| | `thumbnail` | string (media ID) | Custom video thumbnail. Single-video feed posts only, ignored for stories. JPEG/PNG. A thumbnail that fails to apply won't fail the post. |
 | **LinkedIn** (`linkedin`) | `document_title` | string | Title for a PDF (document/carousel) post. Only applies when media is a PDF. Defaults to file name. |
 | | `first_comment` | string (≤1250) | Comment posted on the post right after it publishes, from the same profile or page. Good spot for a link. A failed comment won't fail the post. |
 | **Bluesky** (`bluesky`) | — | — | Only `caption` / `media` overrides. |
 | **Threads** (`threads`) | `location` | `"timeline"` \| `"reels"` | Where it appears. `timeline` (default) or `reels` (video only). |
 | | `first_comment` | string (≤500) | Reply posted right after the thread publishes — good spot for a link. A failed reply won't fail the post. |
+| | `thread` | string[] (≤25, ≤500 each) | Multi-post thread: each entry is posted as a reply to the previous one, in order, under the main post. Stops at the first failed entry; the main post still publishes. |
 | **Google Business** (`google_business`) | `media` | array (single image) | **One image only** — extra images are dropped for GMB (other platforms keep all). No video. |
 | | `cta_action_type` | `BOOK` \| `ORDER` \| `SHOP` \| `LEARN_MORE` \| `SIGN_UP` \| `CALL` | CTA button. Pair with `cta_url` (except `CALL`, which uses the location phone number). |
 | | `cta_url` | string (full URL) | CTA destination. Required when `cta_action_type` is set (except `CALL`). |
