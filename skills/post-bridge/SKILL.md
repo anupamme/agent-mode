@@ -380,7 +380,8 @@ Platform-specific fields:
 | **YouTube** (`youtube`) | `title` | string (≤100 chars) | Video title override. |
 | | `tags` | string[] | Video tags, set per video (YouTube `snippet.tags`). Whole set capped at 500 chars; extras are dropped, the post still publishes. |
 | | `contains_synthetic_media` | boolean | Disclose realistic altered/AI content ("Altered or synthetic content" label). |
-| | `thumbnail` | string (media ID) | Custom thumbnail. **Long-form videos only** — ignored on Shorts. Channel must be verified; JPEG/PNG, 1280×720, <2MB. |
+| | `thumbnail` | string (media ID) | Custom thumbnail, Shorts and long-form. Channel must be verified; JPEG/PNG, 1280×720, <2MB. A thumbnail that fails to apply won't fail the post. |
+| | `publish_at` | ISO 8601 datetime | **Opt-in.** Native YouTube scheduling: the video uploads at the post time (now or `scheduled_at`) as private, YouTube processes it, and YouTube makes it public at `publish_at`. Use it to upload early so the video is ready before launch. Must be after the upload time. Omit it and the video goes public at the post time, as usual. Members-first / early access is not in YouTube's API (set it in Studio). |
 | **Facebook** (`facebook`) | `placement` | `"story"` | Publish as a Page Story (one image/video, no caption/carousel). Omit → feed post. |
 | | `first_comment` | string (≤2200) | Comment posted right after the post publishes — good spot for a link/CTA. Ignored for stories. A failed comment won't fail the post. |
 | | `thumbnail` | string (media ID) | Custom video thumbnail. Single-video feed posts only, ignored for stories. JPEG/PNG. A thumbnail that fails to apply won't fail the post. |
